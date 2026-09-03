@@ -16,6 +16,7 @@ dist/
 
 # Large binary & data files (optional temporary files)
 *.parquet
+*.csv
 *.db
 *.sqlite
 .DS_Store
