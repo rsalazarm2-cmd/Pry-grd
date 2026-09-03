@@ -1,0 +1,41 @@
+[package]
+name = "frontend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+dioxus = { version = "0.7", features = ["web", "router"] }
+dioxus-free-icons = "0.9"
+
+# API & Networking
+reqwest = { version = "0.12", features = ["json"] }
+
+# Serialization & Deserialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde-wasm-bindgen = "0.6.5" # Arma secreta para JSON ultrarrápido
+
+# Big Data en Wasm
+parquet = { version = "53.0", default-features = false }
+arrow = { version = "53.0", default-features = false }
+
+# Visualization
+plotly = { version = "0.9", features = ["wasm"] }
+
+# Async & Web APIs
+futures = "0.3"
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4.42"
+web-sys = "0.3.69"
+js-sys = "0.3.69"
+
+# Background Workers
+gloo-worker = "0.5"
+gloo-timers = { version = "0.3", features = ["futures"] }
+urlencoding = "2.1.3"
+
+[profile.release]
+opt-level = 'z' # Optimizar tamaño para binarios WebAssembly
+lto = true
+codegen-units = 1
+panic = 'abort'

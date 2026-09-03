@@ -1,0 +1,16 @@
+/**
+ * Punto de entrada de la aplicación Vue 3.
+ * Inicializa Pinia y monta la app.
+ */
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import App from './App.vue'
+
+import './assets/styles/variables.css'
+import './assets/styles/layout.css'
+import './assets/styles/components.css'
+import './assets/styles/tables.css'
+
+const app = createApp(App)
+app.use(createPinia())
+app.mount('#app')

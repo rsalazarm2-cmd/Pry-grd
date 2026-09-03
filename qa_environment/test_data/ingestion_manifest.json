@@ -1,0 +1,9 @@
+{
+  "file_name": "datos.csv",
+  "file_size_bytes": 3162349,
+  "sha256_hash": "79fbd6a7d769bc864e4a3a8a7c1d9576d916eada9c7c07360c8be736c3c6c39e",
+  "ingestion_timestamp": "2026-09-02T20:20:28.759776",
+  "rows_count": 9998,
+  "columns_count": 48,
+  "user_agent": "AuditForensicEngine/1.0"
+}

@@ -1,0 +1,29 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Backend API Hexagonal con DuckDB y Parquet para Analítica Medallion"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "django>=5.0",
+    "django-cors-headers>=4.3.1",
+    "django-ninja>=1.1.0",
+    "duckdb>=1.0.0",
+    "pydantic>=2.7.0",
+    "sentence-transformers>=6.0.0",
+    "sentencepiece>=0.2.2",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src", "config"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-django>=4.14.0",
+]
+

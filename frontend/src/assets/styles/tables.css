@@ -1,0 +1,52 @@
+.table-container {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border-glass);
+}
+
+.custom-table, .medallion-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.custom-table th, .medallion-table th {
+  background: var(--table-header-bg);
+  padding: 0.9rem 1rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-glass);
+}
+
+body.theme-light .custom-table th,
+body.theme-light .medallion-table th {
+  background: #f1f5f9;
+  color: #334155;
+  border-bottom: 2px solid #cbd5e1;
+  font-weight: 700;
+}
+
+.custom-table td, .medallion-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-glass);
+  font-family: var(--font-mono);
+}
+
+body.theme-light .custom-table td,
+body.theme-light .medallion-table td {
+  border-bottom: 1px solid #e2e8f0;
+  color: #1e293b;
+}
+
+.custom-table tbody tr:hover,
+.medallion-table tbody tr:hover {
+  background: rgba(56, 189, 248, 0.04);
+}
+
+body.theme-light .custom-table tbody tr:hover,
+body.theme-light .medallion-table tbody tr:hover {
+  background: #f8fafc;
+}

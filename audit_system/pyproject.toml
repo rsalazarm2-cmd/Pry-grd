@@ -1,0 +1,16 @@
+[project]
+name = "audit-system"
+version = "1.0.0"
+description = "Módulo Aislado de Auditoría Forense y Validación de Integridad Financiera para Oracle EBS"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "django>=5.0",
+    "django-ninja>=1.1.0",
+    "duckdb>=1.0.0",
+    "pydantic>=2.7.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

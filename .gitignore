@@ -1,0 +1,24 @@
+# Python & Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Node & Frontend
+node_modules/
+dist/
+.vite/
+*.log
+
+# Large binary & data files (optional temporary files)
+*.parquet
+*.db
+*.sqlite
+.DS_Store
+
+# AntiGravity / IDE temporary lock files
+.~lock*

@@ -1,0 +1,3 @@
+/home/rsalazar/Python/Pry_Grd/backend
+/home/rsalazar/Python/Pry_Grd/Documentation
+/home/rsalazar/Python/Pry_Grd/frontend

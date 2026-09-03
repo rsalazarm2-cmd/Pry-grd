@@ -1,0 +1,53 @@
+{
+  "global_trim_spaces": true,
+  "global_convert_uppercase": true,
+  "global_clean_special_chars": false,
+  "global_clean_accents_and_n": false,
+  "global_clean_colons": false,
+  "global_clean_dots": false,
+  "global_clean_commas": false,
+  "null_strategy": "IMPUTE",
+  "column_rules": {
+    "ID": {
+      "include_in_silver": true,
+      "new_column_name": "FOLIO",
+      "target_data_type": null,
+      "clean_special_chars": null,
+      "clean_dots": null,
+      "clean_commas": null,
+      "null_imputation": "DEFAULT",
+      "convert_to_category": false,
+      "convert_uppercase": true,
+      "group_by_columns": [],
+      "category_mapping": {},
+      "has_commas": false,
+      "has_dots": false,
+      "has_nulls": false,
+      "is_constant": false
+    },
+    "TEXTO": {
+      "include_in_silver": false,
+      "new_column_name": null,
+      "target_data_type": null,
+      "clean_special_chars": null,
+      "clean_dots": null,
+      "clean_commas": null,
+      "null_imputation": "DEFAULT",
+      "convert_to_category": false,
+      "convert_uppercase": true,
+      "group_by_columns": [],
+      "category_mapping": {},
+      "has_commas": false,
+      "has_dots": false,
+      "has_nulls": false,
+      "is_constant": false
+    }
+  },
+  "target_entities": [],
+  "flag_missing_headers": true,
+  "flag_zero_amounts": true,
+  "enable_forensic_trap_detection": true,
+  "duplicate_action_mode": "FLAG_QUARANTINE",
+  "duplicate_prefix": "DUP_",
+  "duplicate_keys": []
+}
