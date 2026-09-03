@@ -4,13 +4,18 @@
 
 ---
 
-## ⚡ 0. REQUISITO OBLIGATORIO: Instalación del Gestor de Paquetes `uv`
+> [!IMPORTANT]
+> ## 📖 MANUAL DE INSTALACIÓN, CONFIGURACIÓN Y USO RÁPIDO (GETTING STARTED)
+> Este documento contiene el manual completo para desplegar el proyecto desde cero en cualquier equipo (Linux, macOS o Windows). Sigue la guía paso a paso a continuación.
 
-Este proyecto utiliza **`uv`** (Astral Python Package Manager) como gestor único y estricto de dependencias en el Backend. `uv` reemplaza a `pip` y `virtualenv`, garantizando entornos reproducibles en menos de 1 segundo.
+---
 
-### 📥 Instalación de `uv`:
+## ⚡ 0. PRERREQUISITOS Y MANUAL DE DESPLIEGUE PASO A PASO
 
-- **Linux / macOS:**
+### 📦 Paso 0.1: Instalación Obligatoria del Gestor de Paquetes `uv` (Backend)
+Este proyecto utiliza **`uv`** (Astral Python Package Manager) como gestor estricto de dependencias en Python. Reemplaza a `pip` y `virtualenv`, creando el entorno virtual `.venv` en menos de 1 segundo.
+
+- **Linux / macOS (Terminal):**
   ```bash
   curl -LsSf https://astral.sh/uv/install.sh | sh
   ```
@@ -18,16 +23,60 @@ Este proyecto utiliza **`uv`** (Astral Python Package Manager) como gestor únic
   ```powershell
   powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
   ```
-- **Con pip (si ya tienes Python):**
+- **Instalación alternativa con pip:**
   ```bash
   pip install uv
   ```
 
-### 🚀 Inicialización del Backend con `uv`:
+---
+
+### 💻 Paso 0.2: Despliegue del Backend (Django REST + DuckDB C++)
+
+1. Entra a la carpeta del backend:
+   ```bash
+   cd backend
+   ```
+2. Instala y sincroniza automáticamente las dependencias del archivo `pyproject.toml`:
+   ```bash
+   uv sync
+   ```
+3. Inicia el servidor de API Backend en el puerto 8000:
+   - **Linux / macOS:**
+     ```bash
+     .venv/bin/python manage.py runserver 8000
+     ```
+   - **Windows:**
+     ```powershell
+     .venv\Scripts\python manage.py runserver 8000
+     ```
+4. *Verificación:* Abre `http://localhost:8000/api/` en tu navegador.
+
+---
+
+### 🎨 Paso 0.3: Despliegue del Frontend (Vue 3 + TypeScript + Vite)
+
+1. Abre una nueva ventana de terminal y entra a la carpeta frontend:
+   ```bash
+   cd frontend
+   ```
+2. Instala los paquetes de Node.js:
+   ```bash
+   npm install
+   ```
+3. Inicia el servidor de desarrollo de Vite:
+   ```bash
+   npm run dev
+   ```
+4. *Verificación:* Abre `http://localhost:5173/` en tu navegador para interactuar con el Studio Canvas por nodos.
+
+---
+
+### 🧪 Paso 0.4: Ejecución de la Suite de Pruebas Automatizadas (QA Pytest)
+
+Para verificar la integridad del backend, DuckDB y los clasificadores NLP:
 ```bash
-cd backend
-uv sync                           # Sincroniza el entorno virtual .venv e instala dependencias exactas
-.venv/bin/python manage.py runserver 8000
+# Desde la raíz del proyecto
+backend/.venv/bin/pytest qa_environment/ -v
 ```
 
 ---
