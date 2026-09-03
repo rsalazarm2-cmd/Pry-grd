@@ -4,6 +4,71 @@ Plataforma Enterprise de Auditoría Forense, Análisis Exploratorio de Datos (ED
 
 ---
 
+> [!IMPORTANT]
+> ## 📖 MANUAL DE INSTALACIÓN Y DESPLIEGUE RÁPIDO PASO A PASO
+> Guía completa para instalar prerrequisitos y desplegar el proyecto Backend (Python/DuckDB) y Frontend (Vue 3/Vite) en cualquier equipo.
+
+### 📦 Paso 1: Instalación Obligatoria del Gestor `uv` (Backend Python)
+Este proyecto exige **`uv`** (Astral Python Package Manager) para gestionar el entorno virtual `.venv` y dependencias en menos de 1 segundo.
+
+- **Linux / macOS (Terminal):**
+  ```bash
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
+- **Windows (PowerShell):**
+  ```powershell
+  powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+  ```
+- **Instalación alternativa con pip:**
+  ```bash
+  pip install uv
+  ```
+
+---
+
+### 💻 Paso 2: Despliegue del Backend (API REST Django + DuckDB C++)
+
+1. Entra a la carpeta del backend:
+   ```bash
+   cd backend
+   ```
+2. Instala y sincroniza automáticamente las dependencias exactas (`pyproject.toml`):
+   ```bash
+   uv sync
+   ```
+3. Ejecuta el servidor en el puerto 8000:
+   - **Linux / macOS:** `.venv/bin/python manage.py runserver 8000`
+   - **Windows:** `.venv\Scripts\python manage.py runserver 8000`
+
+---
+
+### 🎨 Paso 3: Despliegue del Frontend (Vue 3 + TypeScript + Vite)
+
+1. En una nueva terminal, entra a la carpeta frontend:
+   ```bash
+   cd frontend
+   ```
+2. Instala las dependencias de Node.js:
+   ```bash
+   npm install
+   ```
+3. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+4. Abre `http://localhost:5173/` en tu navegador.
+
+---
+
+### 🧪 Paso 4: Ejecución de Pruebas Automatizadas (QA Pytest)
+
+```bash
+# Desde la raíz del proyecto
+backend/.venv/bin/pytest qa_environment/ -v
+```
+
+---
+
 ## 🏛️ Stack Tecnológico Estricto & Arquitectura Hexagonal
 
 ### ⚙️ Backend (Python + DuckDB + Pydantic)
