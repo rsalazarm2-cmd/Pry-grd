@@ -4,6 +4,34 @@
 
 ---
 
+## ⚡ 0. REQUISITO OBLIGATORIO: Instalación del Gestor de Paquetes `uv`
+
+Este proyecto utiliza **`uv`** (Astral Python Package Manager) como gestor único y estricto de dependencias en el Backend. `uv` reemplaza a `pip` y `virtualenv`, garantizando entornos reproducibles en menos de 1 segundo.
+
+### 📥 Instalación de `uv`:
+
+- **Linux / macOS:**
+  ```bash
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
+- **Windows (PowerShell):**
+  ```powershell
+  powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+  ```
+- **Con pip (si ya tienes Python):**
+  ```bash
+  pip install uv
+  ```
+
+### 🚀 Inicialización del Backend con `uv`:
+```bash
+cd backend
+uv sync                           # Sincroniza el entorno virtual .venv e instala dependencias exactas
+.venv/bin/python manage.py runserver 8000
+```
+
+---
+
 ## 🖼️ 1. MAPA VISUAL GRAFICO DE ARQUITECTURA
 
 ![Mapa Visual de Arquitectura del Sistema Medallion](/home/rsalazar/Python/Pry_Grd/docs/architecture/assets/system_architecture_map.png)
